@@ -87,7 +87,37 @@ To test our [early debouncer](https://github.com/ishwo0/Fall2023-Adv-Verilog/blo
 
 
 
-# Lab 4
+# Lab4_ROM_temperature_convrt
+Using two 0.5 Block RAMs to store two ROM memories for Celsius and Fahrenheit conversion values. Range from 0 to 100C, 32 to 212F.
+
+[Lab 4 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%204)
+
+### Temperature Converter
+![Temperature Converter Block Diagram](https://github.com/Fall-2023-Classes/Lab4_ROM_temperature_convrt/assets/112601782/5bb0a630-e41f-49a8-8996-4fa9c07541b4)
+
+The point of this lab is to minimize the amount of resources used on our FPGA board. An example of this is to force a [ROM module](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/ROM.sv) to use the BRAM on the FPGA board instead of using the LUTs. We created a simple [temperature conversion](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/temp_conversion.sv) tool that uses ROM to store the values for the conversions, either from Celsius to Fahrenheit or vice versa. In this case, we instantiated two of these [ROM modules](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/ROM.sv), each using 0.5 BRAM on the board. By having both conversion values go through a [2x1 multiplexer](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/mux_2x1.sv), we can easily switch between converting from Celsius values or from Fahrenheit values. This converted temperature value in binary will go through a [binary to BCD converter](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/bin2bcd.v) before going through the [seven-segment controller](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/seven_seg_control.sv) and finally outputting on the board.
+
+  - [Temperature Converter TOP file](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/temp_conversion.sv)
+    - [Temperature Converter TOP Test Bench Simulation File](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Simulation/temp_conversion_TB.sv)
+  - [ROM](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/ROM.sv)
+  - [2x1 MUX](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/mux_2x1.sv)
+  - [bin2bcd](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/bin2bcd.v)
+  - [seven seg control](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/seven_seg_control.sv)
+    - [modulus counter](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/mod_counter.sv)
+    - [seven_seg_control Test Bench Sim](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Simulation/seven_seg_control_TB.sv)
+  - [sevSegDec](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/sevSegDec.sv)
+
+    
+### ROM
+
+This lab uses a simple Read Only Memory module that is modified in a specific way to force Vivado to use the BRAM on the FPGA board instead of the LUTs. We use two of these modules to store the conversion values for Celsius and Fahrenheit temperatures. The Lookup Tables for these values ([truth_table_celsius.mem](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/truth_table_celsius.mem) and [truth_table_fahrenheit.mem](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/truth_table_fahrenheit.mem) are manually created using Excel.
+
+- [ROM Module](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/ROM.sv)
+  - [LUT for Celsius values](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/truth_table_celsius.mem)
+  - [LUT for Fahrenheit values](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%204/Design/truth_table_fahrenheit.mem)
+
+
+
 
 # Midterm 1
 
