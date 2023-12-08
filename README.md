@@ -249,10 +249,10 @@ Buy Digilent PMOD CMPS2 Compass and make it work.
 Using the Sampler FPro SoC, implement the Digilent PMOD CMPS2 Compass by creating a program that displays a green color on the RGB LED when facing NORTH, and a red color otherwise. The CMPS2 uses the I2C protocol, thus the [I2C core and driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/i2c_core.h) are used in this Midterm. Read and Writes are performed according to the CMPS2 documentation. [This Arduino code was used as a guide](https://create.arduino.cc/editor/almos_vv/18b671a2-cf30-44c7-b141-f1a55a92bd7a/preview)
 
 
-## HDL System
+### HDL
 - [HDL](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Midterms/Midterm%202/HDL)
 
-## Drivers and Application
+### Drivers and Application
 - [Drivers](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Midterms/Midterm%202/Drivers)
 - [main_application](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%202/Main%20Application%20File/main_sampler_test.cpp)
 
@@ -266,7 +266,7 @@ Using the [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree
 
 [Sampler FPro Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/Drivers)
 
-## Main File
+### Main File
 The point of this lab is to use the [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System)'s [PS2 core and its driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/ps2_core.h) to implement a USB keyboard or USB mouse. This lab will implement the USB keyboard by taking the keyboard inputs and using them to control the [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206/Main%20Application%20File). The PS2 driver functions will read the keyboard inputs. If the 'P' key was pressed, the Chasing LED function will pause in place (leaving the LED of its current position ON) or unpause. If the 'F1' key was pressed, the following set of 3 consecutive number inputs from the keyboard will become the new speed of the Chasing LED function. This is done through a series of input comparisons validations using multiple if() statements.
 
   - [main_sampler](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%2011/Main%20Application%20File/main_sampler_test.cpp)
@@ -277,7 +277,7 @@ Strictly in hardware, implement a VGA output that generates squares with 4-bit R
 
 [Lab 12 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%2012)
 
-## VGA Sync
+### VGA Sync
 
 The point of this lab is to create hardware that uses all 16 switches on the Nexys board to control the display on a VGA monitor. The display will be squares with different sizes based
 on the last four switches on the board, while the first 12 switches will control the 4-bit RGB color of the square. The background of the square will always be the complementary color of the square.
