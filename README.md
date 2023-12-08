@@ -118,8 +118,21 @@ This lab uses a simple Read Only Memory module that is modified in a specific wa
 
 
 
-
 # Midterm 1
+Use 2 BRAM modules to implement a 4096x4 memory array using 1024x4 arrays that can read/write into/from a FIFO. The Seven Segment Displays must display the memory location and value of the FIFO. Use switches and buttons to implement read/write functionality.
+
+[Midterm 1 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Midterms/Midterm%201)
+
+### Block Diagram
+![image](https://github.com/Fall-2023-Classes/fa23-midterm-exam-1-ishwo0/assets/112601782/e99eab3e-4ae1-4b09-85ce-5eae441930e0)
+![image](https://github.com/Fall-2023-Classes/fa23-midterm-exam-1-ishwo0/assets/112601782/5a4843dc-0c8b-48b9-a667-3e12b122f282)
+
+### All Edited or New Files:
+- [mem_block](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%201/RTL%20Files/mem_block.sv)
+- [ram_1port](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%201/RTL%20Files/ram_1port.sv)
+- [decoder_2x4](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%201/RTL%20Files/decoder_2x4.sv)
+- [mux_4x1](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%201/RTL%20Files/mux_4x1.sv)
+
 
 # Lab 5
 
