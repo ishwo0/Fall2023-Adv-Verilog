@@ -1,7 +1,7 @@
 # Fall2023-Adv-Verilog
 This is a repository for all of the labs and midterms done in ECE 4305 Digital Design using Advanced Verilog from Fall 2023.
 
-# Lab 1 Barrel Shifter 
+# Lab 1 - Barrel Shifter 
 [Lab1 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%201)
 ### Right_Shifter
 ![param_right_shifter](https://github.com/ishwo0/block_diagrams/assets/112601782/be8e568a-460e-43ac-81a8-301f95402b26)
@@ -28,7 +28,7 @@ Parameterized Left or Right Barrel Shifter with the same parameters *N*, but inc
   - [Reverser Circuit file](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%201/RTL%20Files/reverser.sv) and [Testbench](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%201/Test%20Bench%20Simulation%20Files/reverser_TB.sv)
 
 
-# Lab 2 Square Wave Generator
+# Lab 2 - Square Wave Generator
 
 [Lab 2 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%202)
 
@@ -57,7 +57,7 @@ Basic T-Flip Flop to toggle the square wave signal based on our counter output (
 
 
 
-# Lab 3 Early Debouncer
+# Lab 3 - Early Debouncer
 Since mechanical inputs are not perfect, bouncing of the input signal can occur. This unstable input can create issues if not accounted for, thus, a debouncer can be implemented to deal with bouncing inputs. In this lab, we develop an early debouncer circuit to ensure the stability of our inputs for at least 20ms.
 
 [Lab 3 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%203)
@@ -87,7 +87,7 @@ To test our [early debouncer](https://github.com/ishwo0/Fall2023-Adv-Verilog/blo
 
 
 
-# Lab 4 ROM Temperature Converter
+# Lab 4 - ROM Temperature Converter
 Using two 0.5 Block RAMs to store two ROM memories for Celsius and Fahrenheit conversion values. Range from 0 to 100C, 32 to 212F.
 
 [Lab 4 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%204)
@@ -118,7 +118,7 @@ This lab uses a simple Read Only Memory module that is modified in a specific wa
 
 
 
-# Midterm 1
+# Midterm 1 - FIFO using BRAM
 Use 2 BRAM modules to implement a 4096x4 memory array using 1024x4 arrays that can read/write into/from a FIFO. The Seven Segment Displays must display the memory location and value of the FIFO. Use switches and buttons to implement read/write functionality.
 
 [Midterm 1 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Midterms/Midterm%201)
@@ -134,7 +134,7 @@ Use 2 BRAM modules to implement a 4096x4 memory array using 1024x4 arrays that c
 - [mux_4x1](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%201/RTL%20Files/mux_4x1.sv)
 
 
-# Lab 5 Asymmetric Fifo Buffer
+# Lab 5 - Asymmetric Fifo Buffer
 Create a Fifo Buffer that has different bit lengths for the data going in and the data coming out.
 
 [Lab 5 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%205)
@@ -149,7 +149,7 @@ The point of this lab is to create a Fifo Buffer that has two times the number b
     - [Asymmetric Fifo Buffer Test Bench Simulation file](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/Test%20Bench%20Simulation%20Files/fifo_TB.sv)
 
 
-# Lab 6 Chasing LEDs
+# Lab 6 - Chasing LEDs
 Write C++ code to program the [Vanilla SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206-7%20System) with a Chasing LED function that uses switches as speeds.
 
 [Lab 6 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206)
@@ -158,14 +158,14 @@ Write C++ code to program the [Vanilla SoC](https://github.com/ishwo0/Fall2023-A
 
 [Vanilla SoC Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206-7%20System/Drivers)
 
-### Main 
+### Main Application File
 
 The point of this lab is to create an SoC on our FPGA board with a Chasing LED program for testing. This program is coded in C++ and loaded onto the hardware through Vitis. The Chasing LED program uses switches to set a specific speed for the bouncing LED effect on the board. Using the infinite while loop inside the main() function to call a simple jumping LED function created outside, we can create the bouncing LED effect without separate loops outside, thus allowing the user to reset the effect no matter where the lit LED currently is.
 
   - [main.cpp](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206/Main%20Application%20File)
 
 
-# Lab 7 Blinking LEDs
+# Lab 7 - Blinking LEDs
 Write HDL and a driver for a new blinking core and implement it into the [SoC from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206-7%20System) in a new slot within the MMIO Core.
 
 [Lab 7 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%207)
@@ -191,8 +191,8 @@ the user can set any of the first four LEDs to blink at a desired rate.
   - [blinker_cores.cpp](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20Drivers/blinker_cores.cpp)
 
 
-# Lab 8 Potentiometer Controlled Chasing LEDs
-Using a new [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System), write a C++ function to implement an XADC potentiometer to the [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206).
+# Lab 8 - Potentiometer Controlled Chasing LEDs
+Using a new [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System), write a C++ function to implement a potentiometer, utilizing the [XADC core and driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/xadc_core.h), to the [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206).
 
 [Lab 8 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208)
 
@@ -200,20 +200,89 @@ Using a new [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tr
 
 [Sampler FPro Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/Drivers)
 
-### Main File
+### Main Application File
 
-The point of this lab is to implement the XADC module into our [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206). The XADC will be reading the value from a potentiometer, which will be used as the new speed for our chasing LED function, whereas the switches were previously used for the speed. The XADC Driver functions allows us to read the raw voltage input from the ADC channel that the potentiometer is connected to. This raw voltage is then mapped to a certain range that will
+The point of this lab is to implement the [XADC module](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/xadc_core.h) into our [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206). The XADC will be reading the value from a potentiometer, which will be used as the new speed for our chasing LED function, whereas the switches were previously used for the speed. The XADC Driver functions allows us to read the raw voltage input from the ADC channel that the potentiometer is connected to. This raw voltage is then mapped to a certain range that will
 be used as the speed value for the Chasing LED function.
 
   - [main_sampler](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208/Main%20Application%20File/main_sampler_test.cpp)
 
 
-# Lab 9
+# Lab 9 - Spectrum Display
+Using the same Sampler FPro SoC introduced in Lab 8, write a function using the potentiometer value from [Lab 8](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208) to display a color spectrum on the RGB LEDs.
 
-# Lab 10
+[Lab 9 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%209)
 
-# Midterm 2
+[Sampler FPro HDL Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/HDL)
 
-# Lab 11
+[Sampler FPro Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/Drivers)
 
-# Lab 12
+### Main Application File
+
+The point of this lab is to use the [XADC potentiometer value from Lab 8](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208/Main%20Application%20File/main_sampler_test.cpp) to display a spectrum of colors on the RGB LEDs instead of using it to determine the speed of the Chasing LED function. The raw voltage value from the potentiometer is now mapped to a range from
+0-1 which is then used as the duty cycle for the appropriate color channel of the PWM Driver and Core. A spectrum(...) function is created to split the raw adc voltage value into 6 segments, each with a different color channel (either R, G, or B) being varied from 
+either 0-1 or 1-0. This will create the spectrum shown below.
+
+![image](https://github.com/ishwo0/Fall2023-Adv-Verilog/assets/112601782/0fec90e0-439f-4708-8a28-e68c7e44806c)
+
+  - [main_sampler](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%209/Main%20Application%20File/main_sampler_test.cpp)
+
+
+# Lab 10 - Tapping Detection
+Using the same [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System) introduced in Lab 8, write a function that utilizes the [SPI core and drivers](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/spi_core.h) to detect different tapping intensities through the accelerometer on the Nexys board.
+
+[Lab 10 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%2010)
+
+[Sampler FPro HDL Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/HDL)
+
+[Sampler FPro Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/Drivers)
+
+### Main Application File
+The point of this lab is to use the [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System)'s [SPI core and its driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/spi_core.h) to implement the on-board accelerometer on the Nexys A7. This accelerometer will  produce three values, one for the X-axis, one for the Y-axis, and one for the Z-axis. We take these values using one of the functions in the SPI Driver and use them to calculate the magnitude of the movement as a single value. We then take this magnitude and use it in a clever way to determine each positive spike in magnitude. That spike is then visualized on the LEDs, in which a range of LEDS 0-16 will turn on depending on how small or large the spike is.
+
+  - [main_sampler](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%2010/Main%20Application%20File/main_sampler_test.cpp)
+
+
+# Midterm 2 - PMOD CMPS2 COMPASS 
+Buy Digilent PMOD CMPS2 Compass and make it work.
+
+Using the Sampler FPro SoC, implement the Digilent PMOD CMPS2 Compass by creating a program that displays a green color on the RGB LED when facing NORTH, and a red color otherwise. The CMPS2 uses the I2C protocol, thus the [I2C core and driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/i2c_core.h) are used in this Midterm. Read and Writes are performed according to the CMPS2 documentation. [This Arduino code was used as a guide](https://create.arduino.cc/editor/almos_vv/18b671a2-cf30-44c7-b141-f1a55a92bd7a/preview)
+
+
+## HDL System
+- [HDL](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Midterms/Midterm%202/HDL)
+
+## Drivers and Application
+- [Drivers](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Midterms/Midterm%202/Drivers)
+- [main_application](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%202/Main%20Application%20File/main_sampler_test.cpp)
+
+
+# Lab 11 - Keyboard/Mouse Controlled Chasing LED
+Using the [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System) introduced in Lab 8, utilize the [PS2 core and driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/ps2_core.h) to implement a USB mouse or keyboard that can control the Chasing LED function from [Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206) 
+
+[Lab 11 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%2011)
+
+[Sampler FPro HDL Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/HDL)
+
+[Sampler FPro Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/Drivers)
+
+## Main File
+The point of this lab is to use the [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System)'s [PS2 core and its driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208-11%20System/Drivers/ps2_core.h) to implement a USB keyboard or USB mouse. This lab will implement the USB keyboard by taking the keyboard inputs and using them to control the [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206/Main%20Application%20File). The PS2 driver functions will read the keyboard inputs. If the 'P' key was pressed, the Chasing LED function will pause in place (leaving the LED of its current position ON) or unpause. If the 'F1' key was pressed, the following set of 3 consecutive number inputs from the keyboard will become the new speed of the Chasing LED function. This is done through a series of input comparisons validations using multiple if() statements.
+
+  - [main_sampler](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%2011/Main%20Application%20File/main_sampler_test.cpp)
+
+
+# Lab 12 - Square pattern generator VGA
+Strictly in hardware, implement a VGA output that generates squares with 4-bit RGB colors based on the first 12 switches, and sizes 16, 32, 64, and 128 based on the last four switches.
+
+[Lab 12 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%2012)
+
+## VGA Sync
+
+The point of this lab is to create hardware that uses all 16 switches on the Nexys board to control the display on a VGA monitor. The display will be squares with different sizes based
+on the last four switches on the board, while the first 12 switches will control the 4-bit RGB color of the square. The background of the square will always be the complementary color of the square.
+
+  - [VGA Sync](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%2012/RTL%20Files/vga_sync_demo.sv)
+    - [Frame Counter](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%2012/RTL%20Files/frame_counter.sv)
+
+
