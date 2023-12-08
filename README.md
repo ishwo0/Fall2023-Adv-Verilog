@@ -1,7 +1,7 @@
 # Fall2023-Adv-Verilog
 This is a repository for all of the labs and midterms done in ECE 4305 Digital Design using Advanced Verilog from Fall 2023.
 
-# Lab1_Barrel_Shifter 
+# Lab 1 Barrel Shifter 
 [Lab1 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%201)
 ### Right_Shifter
 ![param_right_shifter](https://github.com/ishwo0/block_diagrams/assets/112601782/be8e568a-460e-43ac-81a8-301f95402b26)
@@ -28,7 +28,7 @@ Parameterized Left or Right Barrel Shifter with the same parameters *N*, but inc
   - [Reverser Circuit file](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%201/RTL%20Files/reverser.sv) and [Testbench](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%201/Test%20Bench%20Simulation%20Files/reverser_TB.sv)
 
 
-# Lab2_Square_Wave_Generator
+# Lab 2 Square Wave Generator
 
 [Lab 2 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%202)
 
@@ -57,7 +57,7 @@ Basic T-Flip Flop to toggle the square wave signal based on our counter output (
 
 
 
-# Lab_3_Early_Debouncer
+# Lab 3 Early Debouncer
 Since mechanical inputs are not perfect, bouncing of the input signal can occur. This unstable input can create issues if not accounted for, thus, a debouncer can be implemented to deal with bouncing inputs. In this lab, we develop an early debouncer circuit to ensure the stability of our inputs for at least 20ms.
 
 [Lab 3 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%203)
@@ -87,7 +87,7 @@ To test our [early debouncer](https://github.com/ishwo0/Fall2023-Adv-Verilog/blo
 
 
 
-# Lab4_ROM_temperature_convrt
+# Lab 4 ROM Temperature Converter
 Using two 0.5 Block RAMs to store two ROM memories for Celsius and Fahrenheit conversion values. Range from 0 to 100C, 32 to 212F.
 
 [Lab 4 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%204)
@@ -134,7 +134,20 @@ Use 2 BRAM modules to implement a 4096x4 memory array using 1024x4 arrays that c
 - [mux_4x1](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Midterms/Midterm%201/RTL%20Files/mux_4x1.sv)
 
 
-# Lab 5
+# Lab 5 Asymmetric Fifo Buffer
+Create a Fifo Buffer that has different bit lengths for the data going in and the data coming out.
+
+[Lab 5 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%205)
+
+## Asymmetric Fifo Buffer
+
+The point of this lab is to create a Fifo Buffer that has two times the number bits for the write data, *w_data*, than the read data, *r_data*. This design is an [Asymmetric Fifo Buffer](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/RTL%20Files/fifo.sv), and in our case, we designed the write data to be 16-bits while the read data is 8-bits.
+
+  - [Asymmetric Fifo Buffer](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/RTL%20Files/fifo.sv)
+    - [Fifo Control Module](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/RTL%20Files/fifo_ctrl.sv)
+    - [2 Port RAM Register Module](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/RTL%20Files/ram_2port.sv)
+    - [Asymmetric Fifo Buffer Test Bench Simulation file](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/Test%20Bench%20Simulation%20Files/fifo_TB.sv)
+
 
 # Lab 6
 
