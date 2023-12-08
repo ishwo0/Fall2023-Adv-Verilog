@@ -139,7 +139,7 @@ Create a Fifo Buffer that has different bit lengths for the data going in and th
 
 [Lab 5 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%205)
 
-## Asymmetric Fifo Buffer
+### Asymmetric Fifo Buffer
 
 The point of this lab is to create a Fifo Buffer that has two times the number bits for the write data, *w_data*, than the read data, *r_data*. This design is an [Asymmetric Fifo Buffer](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/RTL%20Files/fifo.sv), and in our case, we designed the write data to be 16-bits while the read data is 8-bits.
 
@@ -149,11 +149,64 @@ The point of this lab is to create a Fifo Buffer that has two times the number b
     - [Asymmetric Fifo Buffer Test Bench Simulation file](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%205/Test%20Bench%20Simulation%20Files/fifo_TB.sv)
 
 
-# Lab 6
+# Lab 6 Chasing LEDs
+Write C++ code to program the [Vanilla SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206-7%20System) with a Chasing LED function that uses switches as speeds.
 
-# Lab 7
+[Lab 6 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206)
 
-# Lab 8
+[Vanilla SoC HDL Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206-7%20System/HDL)
+
+[Vanilla SoC Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206-7%20System/Drivers)
+
+### Main 
+
+The point of this lab is to create an SoC on our FPGA board with a Chasing LED program for testing. This program is coded in C++ and loaded onto the hardware through Vitis. The Chasing LED program uses switches to set a specific speed for the bouncing LED effect on the board. Using the infinite while loop inside the main() function to call a simple jumping LED function created outside, we can create the bouncing LED effect without separate loops outside, thus allowing the user to reset the effect no matter where the lit LED currently is.
+
+  - [main.cpp](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206/Main%20Application%20File)
+
+
+# Lab 7 Blinking LEDs
+Write HDL and a driver for a new blinking core and implement it into the [SoC from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206-7%20System) in a new slot within the MMIO Core.
+
+[Lab 7 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%207)
+
+[New HDL Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%207/Added%20HDL)
+
+[New Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%207/Added%20Drivers)
+
+### Chu_Blinker
+
+The point of this lab is to learn how to implement our own core in a slot within the MMIO core, as well as writing our own C++ Driver to add functionality to the core. The core we are building is a simple blinking led core.
+This [Blinking LED Core](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/RTL%20Files/chu_blinker.sv) takes the write data from the processor and uses it as a blinking rate to be displayed on an LED of choice (in this case one of the first 4 on the board). Paired with a [C++ Driver](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%207/Added%20Drivers) for this core,
+the user can set any of the first four LEDs to blink at a desired rate.
+
+  - [chu_blinker](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/RTL%20Files/chu_blinker.sv)
+    - [four_blinkers](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/RTL%20Files/four_blinkers.sv)
+      - [blinker](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/RTL%20Files/blinker.sv)
+        - [modulus counter](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/RTL%20Files/modulus_counter.sv)
+        - [t-ff](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/RTL%20Files/t_ff.sv)
+      - [blinker_TB](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/Test%20Bench%20Simulation%20Files/blinker_tb.sv)
+  - [chu_blinker_TB](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20HDL/Test%20Bench%20Simulation%20Files/chu_blinker_TB.sv)
+  - [blinker_cores.h](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20Drivers/blinker_cores.h)
+  - [blinker_cores.cpp](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%207/Added%20Drivers/blinker_cores.cpp)
+
+
+# Lab 8 Potentiometer Controlled Chasing LEDs
+Using a new [Sampler FPro SoC](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System), write a C++ function to implement an XADC potentiometer to the [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206).
+
+[Lab 8 Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208)
+
+[Sampler FPro HDL Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/HDL)
+
+[Sampler FPro Driver Files](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%208-11%20System/Drivers)
+
+### Main File
+
+The point of this lab is to implement the XADC module into our [Chasing LED function from Lab 6](https://github.com/ishwo0/Fall2023-Adv-Verilog/tree/main/Labs/Lab%206). The XADC will be reading the value from a potentiometer, which will be used as the new speed for our chasing LED function, whereas the switches were previously used for the speed. The XADC Driver functions allows us to read the raw voltage input from the ADC channel that the potentiometer is connected to. This raw voltage is then mapped to a certain range that will
+be used as the speed value for the Chasing LED function.
+
+  - [main_sampler](https://github.com/ishwo0/Fall2023-Adv-Verilog/blob/main/Labs/Lab%208/Main%20Application%20File/main_sampler_test.cpp)
+
 
 # Lab 9
 
